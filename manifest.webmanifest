@@ -1,49 +1,60 @@
 {
-    "name": "My Gallerie - Joffrey",
-    "short_name": "MyGallerie - J",
-    "start_url": "index.html",
+    "name": "My Gallery - Joffrey",
+    "short_name": "MyGallery - J",
+    "start_url": "/",
     "lang": "fr-FR",
-    "description": "Une simple présentation de ma Gallerie d'images, par Joffrey",
+    "orientation": "portrait",
+    "display": "minimal-ui",
+    "scope": "/",
+    "description": "Une simple présentation de ma Galerie d'images, par Joffrey",
     "icons": [
         {
             "src": "images/icons/icon_gallerie_72x72.png",
             "sizes": "72x72",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_128x128.png",
             "sizes": "128x128",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_172x172.png",
             "sizes": "172x172",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_200x200.png",
             "sizes": "200x200",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_256x256.png",
             "sizes": "256x256",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_300x300.png",
             "sizes": "300x300",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icon_gallerie_400x400.png",
             "sizes": "400x400",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "images/icons/icon_gallerie_512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ]
 }
