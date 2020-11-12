@@ -1,3 +1,15 @@
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("https://clever-roentgen-a7b6ea.netlify.app/GalleryRepo/images.json")
+        .then(function (response) {
+            return response.json();
+        }).then(function (res) {
+            console.log(res);
+        }).catch(function (err) {
+            console.log(err);
+        });
+})
+
+
 let div_main = document.getElementById("main");
 
 let container = document.createElement("div");
