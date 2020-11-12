@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then(function (res) {
             console.log(res);
 
-            let images = JSON.parse(res);
+            let images = res;
 
             let div_main = document.getElementById("main");
 
