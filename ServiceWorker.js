@@ -7,7 +7,7 @@ self.addEventListener('message', event => {
 
 
 self.addEventListener('fetch', event => {
-    event.RespondWith(new Response('PWA!!!!'));
+    event.console.log('PWA!!!!');
 });
 
 
