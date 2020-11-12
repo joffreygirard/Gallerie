@@ -7,7 +7,7 @@ self.addEventListener('message', event => {
 
 
 self.addEventListener('fetch', event => {
-    event.console.log('PWA!!!!');
+    console.log('PWA!!!!');
 });
 
 
