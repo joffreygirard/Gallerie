@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 let img = document.createElement("img");
                 img.src = image.src;
+                img.alt = image.alt;
+                img.title = image.title;
                 img.classList.add("w-100", "on_hover_clickable");
 
                 div_image.appendChild(img);
