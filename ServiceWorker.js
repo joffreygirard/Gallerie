@@ -28,3 +28,10 @@ if (navigator.offline) {
     console.log("Vous êtes hors ligne !");
 }
 
+if (navigator.connection) {
+    if (navigator.connection.type === "wifi") {
+        console.log("Connecté en Wifi");
+    } else {
+        console.log('API non supporté par le navigateur');
+    }
+}
