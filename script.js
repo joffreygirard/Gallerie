@@ -49,14 +49,6 @@ document.body.addEventListener("offline", function (e) {
 
 console.log(navigator.onLine ? 'online' : 'offline');
 
-/*window.addEventListener("online", function (e) {
-    console.log("Vous êtes connecté à internet");
-});
-
-window.addEventListener("offline", function (e) {
-    console.log("Vous n'êtes pas connecté à internet");
-});*/
-
 if ('cache' in window) {
     caches.open('nom_du_cache')
         .then((cache) => {
