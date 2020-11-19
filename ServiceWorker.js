@@ -48,7 +48,7 @@ self.addEventListener("fetch", event => {
                             title: j.title
                         }));
 
-                        console.log(response);
+                        console.log(response.json());
                         /*caches.open(cacheName).then(cache => {
                             cache.addAll([
 
