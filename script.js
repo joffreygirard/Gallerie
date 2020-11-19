@@ -48,6 +48,15 @@ window.addEventListener("offline", function (e) {
     console.log("Vous n'êtes pas connecté à internet");
 });
 
+if ('cache' in window) {
+    caches.open('nom_du_cache')
+        .then((cache) => {
+            cache.addAll(['/','/style.css', 'script.js']);
+        }).catch((err) => {
+            console.log(err)
+        });
+}
+
 
 /*let div_main = document.getElementById("main");
 
