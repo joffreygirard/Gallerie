@@ -16,18 +16,6 @@ self.addEventListener('install', event => {
 });
 
 
-/*self.addEventListener('activate', function(event){
-    event.waitUntil(…);
-});*/
-
-if (navigator.online) {
-    console.log("Vous êtes en ligne !");
-}
-
-if (navigator.offline) {
-    console.log("Vous êtes hors ligne !");
-}
-
 if (navigator.connection) {
     if (navigator.connection.type === "wifi") {
         console.log("Connecté en Wifi");
