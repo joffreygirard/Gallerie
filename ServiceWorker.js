@@ -20,7 +20,11 @@ self.addEventListener('install', event => {
     event.waitUntil(…);
 });*/
 
+if (navigator.online) {
+    console.log("Vous êtes en ligne !");
+}
 
-
-
+if (navigator.offline) {
+    console.log("Vous êtes hors ligne !");
+}
 

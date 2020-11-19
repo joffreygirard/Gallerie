@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+window.addEventListener("online", event=>{
+    console.log("Vous êtes connecté à internet");
+});
+
+window.addEventListener("offline", event=>{
+    console.log("Vous n'êtes pas connecté à internet");
+});
+
 
 /*let div_main = document.getElementById("main");
 
