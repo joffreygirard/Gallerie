@@ -39,15 +39,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.body.addEventListener("online", function (e) {
-    console.log("En ligne !");
-});
+let firstTimeExecute = true;
+let networkConnectionState = false;
+function checkNetworkConnection() {
+    if (navigator.onLine !== networkConnectionState || firstTimeExecute) {
+        if (navigator.onLine) {
+            console.log("Vous êtes connecté à internet");
+        } else {
+            console.log("Vous n'êtes pas connecté à internet");
+        }
+        firstTimeExecute = false;
+    }
+    console.log(navigator.onLine ? 'online' : 'offline');
 
-document.body.addEventListener("offline", function (e) {
-    console.log("Hors ligne !");
-});
+    setTimeout(checkNetworkConnection, 2000);
+}
+checkNetworkConnection();
 
-console.log(navigator.onLine ? 'online' : 'offline');
+
 
 if ('cache' in window) {
     caches.open('nom_du_cache')
