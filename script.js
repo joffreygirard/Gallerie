@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-window.addEventListener("online", event=>{
+window.addEventListener("online", function (e) {
     console.log("Vous êtes connecté à internet");
 });
 
-window.addEventListener("offline", event=>{
+window.addEventListener("offline", function (e) {
     console.log("Vous n'êtes pas connecté à internet");
 });
 
