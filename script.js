@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
+console.log(navigator.onLine ? 'online' : 'offline');
+
 window.addEventListener("online", function (e) {
     console.log("Vous êtes connecté à internet");
 });
