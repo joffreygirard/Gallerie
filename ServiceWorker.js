@@ -42,18 +42,21 @@ self.addEventListener("fetch", event => {
                 if (response.status === 200) {
                     console.info("Formatting data");
                     return response.json().then(json => {
-                        const formattedResponse = json.map(j => ({
-                            src: j.src,
-                            alt: j.alt,
-                            title: j.title
-                        }));
 
-                        console.log(response.json());
                         /*caches.open(cacheName).then(cache => {
                             cache.addAll([
 
                             ])
                         });*/
+                        json.forEach(function (image) {
+                            console.log(image.src);
+                        });
+
+                        const formattedResponse = json.map(j => ({
+                            src: j.src,
+                            alt: j.alt,
+                            title: j.title
+                        }));
 
                         return new Response(JSON.stringify(formattedResponse));
                     });
