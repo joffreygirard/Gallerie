@@ -21,6 +21,12 @@
             "purpose": "maskable"
         },
         {
+             "src": "images/icon_gallerie_144x144.png",
+             "sizes": "144x144",
+             "type": "image/png",
+             "purpose": "maskable"
+        },
+        {
             "src": "images/icon_gallerie_172x172.png",
             "sizes": "172x172",
             "type": "image/png",

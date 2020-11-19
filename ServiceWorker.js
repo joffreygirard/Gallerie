@@ -5,24 +5,30 @@ self.addEventListener('message', event => {
         });
 });
 
-
 self.addEventListener('fetch', event => {
     console.log('PWA!!!!');
 });
-
 
 self.addEventListener('install', event => {
     event.waitUntil(Promise.resolve('Install phase succeed'));
 });
 
 
-if (navigator.connection) {
-    if (navigator.connection.type === "wifi") {
-        console.log("Connecté en Wifi");
-    } else {
-        console.log('API non supporté par le navigateur');
-    }
+if (navigator.onLine) {
+    console.log("online");
+} else {
+    console.log("offline");
 }
+
+window.addEventListener("onLine", function (e) {
+    console.log("change online");
+});
+
+window.addEventListener("offline", function (e) {
+    console.log("change offline");
+});
+
+
 
 self.addEventListener('install', function(event) {
     event.waitUntil(caches.open('nom_du_cache')
