@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-/*let firstTimeExecute = true;
+let firstTimeExecute = true;
 let networkConnectionState = false;
 function checkNetworkConnection() {
     console.log("first exec : " + firstTimeExecute);
@@ -55,16 +55,17 @@ function checkNetworkConnection() {
         firstTimeExecute = false;
     }
 
-    console.log("onLine : " + navigator.onLine);
     console.log("networkConnectionState : " + networkConnectionState);
+
+    console.log("onLine : " + navigator.onLine);
+    console.log("window onLine : " + window.navigator.onLine);
 
 
     setTimeout(checkNetworkConnection, 2000);
 }
-checkNetworkConnection();*/
+checkNetworkConnection();
 
-console.log("onLine : " + navigator.onLine);
-console.log("window onLine : " + window.navigator.onLine);
+
 
 
 
