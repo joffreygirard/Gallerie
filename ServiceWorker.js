@@ -43,13 +43,12 @@ self.addEventListener("fetch", event => {
                     console.info("Formatting data");
                     return response.json().then(json => {
 
-                        /*caches.open(cacheName).then(cache => {
-                            cache.addAll([
-
-                            ])
-                        });*/
                         json.forEach(function (image) {
-                            console.log(image.src);
+                            caches.open(cacheName).then(cache => {
+                                cache.addAll([
+                                    image.src
+                                ]);
+                            });
                         });
 
                         const formattedResponse = json.map(j => ({
