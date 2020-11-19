@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("offline");
     }
 
-    window.addEventListener("onLine", function (e) {
+    window.addEventListener("online", function (e) {
         console.log("change online");
     });
 
