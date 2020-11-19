@@ -6,6 +6,7 @@ const files = [
     "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap",
     "script.js",
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+    "https://mobirise.com/bootstrap-gallery/assets1/images/photo-1496347646636-ea47f7d6b37b-1350x900-800x533.jpg",
 ];
 
 
@@ -43,13 +44,13 @@ self.addEventListener("fetch", event => {
                     console.info("Formatting data");
                     return response.json().then(json => {
 
-                        json.forEach(function (image) {
+                        /*json.forEach(function (image) {
                             caches.open(cacheName).then(cache => {
                                 cache.addAll([
                                     image.src
                                 ]);
                             });
-                        });
+                        });*/
 
                         const formattedResponse = json.map(j => ({
                             src: j.src,
