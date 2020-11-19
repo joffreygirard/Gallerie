@@ -50,6 +50,9 @@ function checkNetworkConnection() {
         }
         firstTimeExecute = false;
     }
+    console.log("first exec : " + firstTimeExecute);
+    console.log("onLine : " + navigator.onLine);
+    console.log("networkConnectionState : " + networkConnectionState);
     console.log(navigator.onLine ? 'online' : 'offline');
 
     setTimeout(checkNetworkConnection, 2000);
