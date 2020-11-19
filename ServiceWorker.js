@@ -14,23 +14,11 @@ self.addEventListener('install', event => {
 });
 
 
-if (navigator.onLine) {
-    console.log("online");
-} else {
-    console.log("offline");
-}
-
-window.addEventListener("onLine", function (e) {
-    console.log("change online");
-});
-
-window.addEventListener("offline", function (e) {
-    console.log("change offline");
-});
 
 
 
-self.addEventListener('install', function(event) {
+
+/*self.addEventListener('install', function(event) {
     event.waitUntil(caches.open('nom_du_cache')
         .then(cache => {
             return cache.addAll(
@@ -49,7 +37,7 @@ self.addEventListener('fetch', function(e) {
             return response || fetch(e.request);
         })
     )
-});
+});*/
 
 
 

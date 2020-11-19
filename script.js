@@ -36,6 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }).catch(function (err) {
             console.log(err);
         });
+
+
+    if (navigator.onLine) {
+        console.log("online");
+    } else {
+        console.log("offline");
+    }
+
+    window.addEventListener("onLine", function (e) {
+        console.log("change online");
+    });
+
+    window.addEventListener("offline", function (e) {
+        console.log("change offline");
+    });
 });
 
 
