@@ -48,6 +48,13 @@ self.addEventListener("fetch", event => {
                             title: j.title
                         }));
 
+                        console.log(response);
+                        /*caches.open(cacheName).then(cache => {
+                            cache.addAll([
+
+                            ])
+                        });*/
+
                         return new Response(JSON.stringify(formattedResponse));
                     });
 
