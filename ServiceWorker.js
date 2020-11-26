@@ -9,6 +9,7 @@ const files = [
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
     "https://code.jquery.com/jquery-3.5.1.min.js",
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js",
 ];
 
 
@@ -76,22 +77,4 @@ self.addEventListener("fetch", event => {
         );
     }
 });
-
-
-
-/*self.addEventListener('message', event => {
-    this.clients.matchAll()
-        .then(clients => {
-            clients.forEach(client => client.postMessage('Enchanté, je suis le service worker'));
-        });
-});
-
-self.addEventListener('fetch', event => {
-    console.log('PWA!!!!');
-});
-
-self.addEventListener('install', event => {
-    event.waitUntil(Promise.resolve('Install phase succeed'));
-});*/
-
 
