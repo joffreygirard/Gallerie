@@ -7,6 +7,9 @@
 }
 
 .fav_icon {
-    color: red;
     cursor: pointer;
+}
+
+.fav_icon .fas {
+    color: red;
 }
