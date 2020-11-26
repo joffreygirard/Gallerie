@@ -58,7 +58,7 @@ function displayImages(images) {
         span_fav.classList.add("fav_icon");
 
         let icon_fav = document.createElement("i");
-        icon_fav.classList.add("far fa-heart");
+        icon_fav.classList.add("far", "fa-heart");
 
         div_fav.appendChild(icon_fav);
         div_image.appendChild(img);
