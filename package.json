@@ -1,0 +1,28 @@
+{
+  "name": "Gallerie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ServiceWorker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joffreygirard/Gallerie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joffreygirard/Gallerie/issues"
+  },
+  "homepage": "https://github.com/joffreygirard/Gallerie#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.3.2",
+    "html-webpack-plugin": "^4.5.0",
+    "serviceworker-webpack-plugin": "^1.0.1",
+    "webpack": "^5.7.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

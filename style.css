@@ -5,3 +5,8 @@
 .on_hover_clickable:hover {
     cursor: pointer;
 }
+
+.fav_icon {
+    color: red;
+    cursor: pointer;
+}

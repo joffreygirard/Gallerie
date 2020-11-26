@@ -51,7 +51,18 @@ function displayImages(images) {
         img.title = image.title;
         img.classList.add("w-100", "on_hover_clickable");
 
+        let div_fav = document.createElement("div");
+        div_fav.classList.add("p-1");
+
+        let span_fav = document.createElement("span");
+        span_fav.classList.add("fav_icon");
+
+        let icon_fav = document.createElement("i");
+        icon_fav.classList.add("far fa-heart");
+
+        div_fav.appendChild(icon_fav);
         div_image.appendChild(img);
+        div_image.appendChild(div_fav);
         row.appendChild(div_image);
     });
 

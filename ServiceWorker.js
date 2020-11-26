@@ -10,6 +10,7 @@ const files = [
     "https://code.jquery.com/jquery-3.5.1.min.js",
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js",
+    "https://kit.fontawesome.com/6acba9f91f.js",
 ];
 
 
