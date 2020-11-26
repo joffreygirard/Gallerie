@@ -1,3 +1,5 @@
+let div_disconnected = document.getElementById("disconnected");
+
 document.addEventListener("DOMContentLoaded", function () {
     fetch("https://clever-roentgen-a7b6ea.netlify.app/GalleryRepo/images.json")
         .then(function (response) {
@@ -40,16 +42,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (navigator.onLine) {
         console.log("online");
+        div_disconnected.classList.add("d-none");
     } else {
         console.log("offline");
+        div_disconnected.classList.remove("d-none");
     }
 
     window.addEventListener("online", function (e) {
         console.log("change online");
+        div_disconnected.classList.add("d-none");
     });
 
     window.addEventListener("offline", function (e) {
         console.log("change offline");
+        div_disconnected.classList.remove("d-none");
     });
 });
 
