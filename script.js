@@ -60,7 +60,8 @@ function displayImages(images) {
         let icon_fav = document.createElement("i");
         icon_fav.classList.add("far", "fa-heart");
 
-        div_fav.appendChild(icon_fav);
+        span_fav.appendChild(icon_fav)
+        div_fav.appendChild(span_fav);
         div_image.appendChild(img);
         div_image.appendChild(div_fav);
         row.appendChild(div_image);
