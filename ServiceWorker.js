@@ -5,7 +5,10 @@ const files = [
     "style.css",
     "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap",
     "script.js",
+    "manifest.webmanifest",
     "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css",
+    "https://code.jquery.com/jquery-3.5.1.min.js",
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js",
 ];
 
 
