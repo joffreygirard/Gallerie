@@ -63,11 +63,9 @@ function displayImages(images) {
 
         icon_fav.addEventListener("click", function () {
             if (this.hasAttribute("class", "far")) {
-                this.classList.remove("far");
-                this.classList.add("fas");
+                this.setAttribute("class", "fas fa-heart");
             } else if (this.hasAttribute("class", "fas")) {
-                this.classList.remove("fas");
-                this.classList.add("far");
+                this.setAttribute("class", "far fa-heart");
             }
         });
 
