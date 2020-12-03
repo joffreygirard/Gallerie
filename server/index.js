@@ -12,7 +12,13 @@ app.get("/favoris", (request, response) => {
 });
 app.post("/favoris", (request, response) => {
     console.log(request.body);
-    favoris = request.body;
+
+    if (favoris.includes(request.body.photoId)) {
+        favoris = favoris.filter(item => item !== request.body.photoId);
+    } else {
+        favoris.push(request.body.photoId);
+    }
+
     response.send(favoris);
 });
 app.listen(port, err => {

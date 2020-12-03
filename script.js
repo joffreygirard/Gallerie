@@ -1,5 +1,6 @@
 let div_disconnected = document.getElementById("disconnected");
 let fetchData;
+let favs = [];
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -62,11 +63,7 @@ function displayImages(images) {
         icon_fav.classList.add("far", "fa-heart");
 
         icon_fav.addEventListener("click", function () {
-            if (this.getAttribute("class") === "far fa-heart") {
-                this.setAttribute("class", "fas fa-heart");
-            } else if (this.getAttribute("class") === "fas fa-heart") {
-                this.setAttribute("class", "far fa-heart");
-            }
+            addFavoris(this);
         });
 
         span_fav.appendChild(icon_fav)
@@ -80,7 +77,62 @@ function displayImages(images) {
     div_main.appendChild(container);
 }
 
+function addFavoris(image) {
+    let photoId = image.id;
 
+    let added = false;
+    if (image.getAttribute("class") === "far fa-heart") {
+        image.setAttribute("class", "fas fa-heart");
+        added = true;
+    } else if (image.getAttribute("class") === "fas fa-heart") {
+        image.setAttribute("class", "far fa-heart");
+        added = false;
+    }
+
+    fetch("http://localhost:3000/favoris", {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({photoId}),
+    }).then(res => {
+        return res.json();
+    }).then(data => {
+        favs = data;
+        let message = added?"Image ajoutée aux favoris":"Image retirée des favoris";
+        sendNotif(message);
+    })
+}
+
+function isFavoris(id) {
+    return favs.include(id);
+}
+
+function getFavoris() {
+    fetch("http://localhost:3000/favoris", {
+        method: 'GET'
+    }).then(res => {
+        return res.json();
+    }).then(data => {
+        favs = data;
+        return favs;
+    });
+}
+
+function sendNotif(message) {
+    if ("Notification" in window) {
+        if (Notification.permission === "granted") {
+            const notification = new Notification(message);
+        } else if (Notification.permission !== "denied") {
+            Notification.requestPermission(permission => {
+                if (permission === "granted") {
+                    const notification = new Notification(message);
+                }
+            });
+        }
+    }
+}
 
 
 
