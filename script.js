@@ -41,7 +41,7 @@ function displayImages(images) {
     let row = document.createElement("div");
     row.classList.add("row");
 
-    images.forEach(function (image) {
+    images.forEach(function (image, i) {
         let div_image = document.createElement("div");
         div_image.classList.add("col-sm-6", "col-md-4", "col-lg-3", "p-2");
 
@@ -58,6 +58,7 @@ function displayImages(images) {
         span_fav.classList.add("fav_icon");
 
         let icon_fav = document.createElement("i");
+        icon_fav.id = "icon_fav_" + i;
         icon_fav.classList.add("far", "fa-heart");
 
         span_fav.appendChild(icon_fav)
