@@ -61,6 +61,10 @@ function displayImages(images) {
         icon_fav.id = "icon_fav_" + i;
         icon_fav.classList.add("far", "fa-heart");
 
+        icon_fav.addEventListener("click", function () {
+            console.log(this.id + " est clické");
+        })
+
         span_fav.appendChild(icon_fav)
         div_fav.appendChild(span_fav);
         div_image.appendChild(img);
