@@ -89,20 +89,37 @@ function addFavoris(image) {
         added = false;
     }
 
-    fetch("http://localhost:3000/favoris", {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({photoId}),
-    }).then(res => {
-        return res.json();
-    }).then(data => {
-        favs = data;
-        let message = added?"Image ajoutée aux favoris":"Image retirée des favoris";
-        sendNotif(message);
-    })
+    if (added) {
+        fetch("http://localhost:3000/favoris/add", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({photoId}),
+        }).then(res => {
+            return res.json();
+        }).then(data => {
+            favs = data;
+            sendNotif("Image ajoutée aux favoris");
+        })
+    } else {
+        fetch("http://localhost:3000/favoris/del", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({photoId}),
+        }).then(res => {
+            return res.json();
+        }).then(data => {
+            favs = data;
+            sendNotif("Image retirée des favoris");
+        })
+    }
+
+
 }
 
 function isFavoris(id) {
