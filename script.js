@@ -63,9 +63,11 @@ function displayImages(images) {
 
         icon_fav.addEventListener("click", function () {
             if (this.hasAttribute("class", "far")) {
-                this.classList.remove("far").add("fas");
+                this.classList.remove("far");
+                this.classList.add("fas");
             } else if (this.hasAttribute("class", "fas")) {
-                this.classList.remove("fas").add("far");
+                this.classList.remove("fas");
+                this.classList.add("far");
             }
         });
 
