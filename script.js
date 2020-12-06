@@ -1,6 +1,6 @@
 let div_disconnected = document.getElementById("disconnected");
 let fetchData;
-let favs = [];
+let favoris = [];
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("offline");
         div_disconnected.classList.remove("d-none");
         fetchData = localforage.getItem("data");
-        favs = localforage.getItem("favoris");
-        console.log(favs);
+        favoris = localforage.getItem("favoris");
+        console.log(favoris);
     }
 
     fetchData.then((json) => displayImages(json));
@@ -109,7 +109,7 @@ function addFavoris(image) {
         }).then(res => {
             return res.json();
         }).then(data => {
-            favs = data;
+            favoris = data;
             sendNotif("Image ajoutée aux favoris");
         })
     } else {
@@ -123,7 +123,7 @@ function addFavoris(image) {
         }).then(res => {
             return res.json();
         }).then(data => {
-            favs = data;
+            favoris = data;
             sendNotif("Image retirée des favoris");
         })
     }
@@ -132,7 +132,7 @@ function addFavoris(image) {
 }
 
 function isFavoris(id) {
-    return favs.include(id);
+    return favoris.include(id);
 }
 
 function getFavoris() {
@@ -142,8 +142,8 @@ function getFavoris() {
         return res.json();
     }).then(data => {
         favoris = data;
-        localforage.setItem("favoris", favs);
-        return favs;
+        localforage.setItem("favoris", favoris);
+        return favoris;
     });
 }
 
