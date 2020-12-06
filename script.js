@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("offline");
         div_disconnected.classList.remove("d-none");
         fetchData = localforage.getItem("data");
-        favoris = localforage.getItem("favoris");
         console.log(favoris);
     }
 
@@ -65,11 +64,13 @@ function displayImages(images) {
         let icon_fav = document.createElement("i");
         icon_fav.id = "icon_fav_" + i;
 
-        if (isFavoris(icon_fav.id)) {
+        /*if (isFavoris(icon_fav.id)) {
             icon_fav.classList.add("fas", "fa-heart");
         } else {
             icon_fav.classList.add("far", "fa-heart");
-        }
+        }*/
+        console.log(favoris);
+        icon_fav.classList.add("far", "fa-heart");
 
         icon_fav.addEventListener("click", function () {
             addFavoris(this);
@@ -142,7 +143,6 @@ function getFavoris() {
         return res.json();
     }).then(data => {
         favoris = data;
-        localforage.setItem("favoris", favoris);
         return favoris;
     });
 }
