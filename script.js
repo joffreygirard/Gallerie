@@ -1,12 +1,15 @@
 let div_disconnected = document.getElementById("disconnected");
 let fetchData;
-let favs = [];
+let favs;
 
 document.addEventListener("DOMContentLoaded", function () {
 
     if (navigator.onLine) {
         console.log("online");
         div_disconnected.classList.add("d-none");
+
+        favs = getFavoris();
+        console.log(favs);
 
         fetchData = fetch("https://clever-roentgen-a7b6ea.netlify.app/GalleryRepo/images.json")
             .then((response) => response.json())
@@ -17,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("offline");
         div_disconnected.classList.remove("d-none");
         fetchData = localforage.getItem("data");
+        favs = localforage.getItem("favoris");
     }
 
     fetchData.then((json) => displayImages(json));
@@ -60,7 +64,12 @@ function displayImages(images) {
 
         let icon_fav = document.createElement("i");
         icon_fav.id = "icon_fav_" + i;
-        icon_fav.classList.add("far", "fa-heart");
+
+        if (isFavoris(icon_fav.id)) {
+            icon_fav.classList.add("fas", "fa-heart");
+        } else {
+            icon_fav.classList.add("far", "fa-heart");
+        }
 
         icon_fav.addEventListener("click", function () {
             addFavoris(this);
@@ -119,7 +128,7 @@ function addFavoris(image) {
         })
     }
 
-
+    getFavoris();
 }
 
 function isFavoris(id) {
@@ -133,6 +142,7 @@ function getFavoris() {
         return res.json();
     }).then(data => {
         favs = data;
+        localforage.setItem("favoris", favs);
         return favs;
     });
 }
