@@ -144,9 +144,9 @@ function getFavoris() {
     }).then(res => {
         return res.json();
     }).then(data => {
-        localforage.setItem("favoris", data);
-        console.log(data);
         favs = data;
+        localforage.setItem("favoris", favs);
+        console.log(favs);
         return favs;
     });
 }
