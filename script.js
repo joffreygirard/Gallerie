@@ -64,13 +64,11 @@ function displayImages(images) {
         let icon_fav = document.createElement("i");
         icon_fav.id = "icon_fav_" + i;
 
-        /*if (isFavoris(icon_fav.id)) {
+        if (isFavoris(icon_fav.id)) {
             icon_fav.classList.add("fas", "fa-heart");
         } else {
             icon_fav.classList.add("far", "fa-heart");
-        }*/
-        console.log(favoris);
-        icon_fav.classList.add("far", "fa-heart");
+        }
 
         icon_fav.addEventListener("click", function () {
             addFavoris(this);
@@ -133,7 +131,7 @@ function addFavoris(image) {
 }
 
 function isFavoris(id) {
-    return favoris.include(id);
+    return favoris.includes(id);
 }
 
 function getFavoris() {
