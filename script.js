@@ -1,6 +1,6 @@
 let div_disconnected = document.getElementById("disconnected");
 let fetchData;
-let favs;
+let favs = [];
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -144,6 +144,8 @@ function getFavoris() {
     }).then(res => {
         return res.json();
     }).then(data => {
+        localforage.setItem("favoris", data);
+        console.log(data);
         favs = data;
         return favs;
     });
